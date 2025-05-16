@@ -1,0 +1,9 @@
+pandas
+numpy
+python-telegram-bot
+requests
+ta
+pytz
+ccxt
+plotly
+kaleido
