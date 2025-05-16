@@ -1,0 +1,39 @@
+name: Analyze Cryptocurrencies
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'  # هر ۲ ساعت اجرا می‌شود
+  workflow_dispatch:  # اجازه اجرای دستی
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          
+      - name: Run analysis
+        run: python src/analyze.py
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add data/signals.json
+          git commit -m "Update signals data [skip ci]" || echo "No changes to commit"
+          git push
