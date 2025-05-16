@@ -1,0 +1,11 @@
+{
+  "min_conditions_required": 3,
+  "ema_crossover_enabled": true,
+  "rsi_enabled": true,
+  "macd_enabled": true,
+  "bollinger_bands_enabled": true,
+  "volume_analysis_enabled": true,
+  "price_action_enabled": true,
+  "risk_reward_ratio": 2.0,
+  "partial_take_profit": true
+}
