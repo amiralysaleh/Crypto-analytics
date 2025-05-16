@@ -1,0 +1,17 @@
+[
+  {"symbol": "BTC", "name": "Bitcoin"},
+  {"symbol": "ETH", "name": "Ethereum"},
+  {"symbol": "BNB", "name": "Binance Coin"},
+  {"symbol": "ADA", "name": "Cardano"},
+  {"symbol": "SOL", "name": "Solana"},
+  {"symbol": "XRP", "name": "Ripple"},
+  {"symbol": "DOT", "name": "Polkadot"},
+  {"symbol": "DOGE", "name": "Dogecoin"},
+  {"symbol": "AVAX", "name": "Avalanche"},
+  {"symbol": "LINK", "name": "Chainlink"},
+  {"symbol": "MATIC", "name": "Polygon"},
+  {"symbol": "UNI", "name": "Uniswap"},
+  {"symbol": "LTC", "name": "Litecoin"},
+  {"symbol": "ALGO", "name": "Algorand"},
+  {"symbol": "ATOM", "name": "Cosmos"}
+]
